@@ -14,6 +14,11 @@ export const asyncSignIn = (values, props) => {
       let rec = res[0];
       if (values.username === rec.username && values.password === rec.password) {
         dispatch(onSignIn(values));
+        window.localStorage.setItem('user', JSON.stringify(rec));
+        let redirect = props.location.state
+          ? props.location.state.redirect
+          : '/';
+        props.history.replace(redirect);
       }
 
       // window.localStorage.setItem('user', JSON.stringify(res.data));
