@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Homewrap = styled.div`
-  display: flex;
+  display: -webkit-flex;
   flex-direction:column;
   height: 100%;
 `;
@@ -15,7 +15,9 @@ export const Header = styled.div`
 `;
 export const NavWrap = styled.div`
   height:38px;
-  background:#ddd;
+  /* width:100%; */
+  background:#f4f5f6;
+
 `;
 export const ContentWrap = styled.div`
   flex:1;
