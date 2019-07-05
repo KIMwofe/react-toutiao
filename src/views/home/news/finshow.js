@@ -76,7 +76,7 @@ export default class finshow extends Component {
         // let arr = this.state.newsList;
         let newsList = [...this.state.newsList]
         res.data.data.map(item => {
-          newsList.push(item);
+          return newsList.push(item);
         })
         isLoding = false;
         this.setState({

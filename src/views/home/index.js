@@ -132,7 +132,7 @@ class Index extends Component {
         // let arr = this.state.newsList;
         let newsList = [...this.state.newsList]
         res.data.data.map(item => {
-          newsList.push(item);
+          return newsList.push(item);
         })
         isLoding = false;
         this.setState({
@@ -152,12 +152,15 @@ class Index extends Component {
       }
     }
   }
-  handelupNewList(props) {
-
+  handelupNewList() {
+    http.get(`i6710055409031315971/info/?i=6710055409031315971`).then(res => {
+      console.log(res.data)
+    })
   }
   componentDidMount() {
     this.getNewList();
     this.ajax();
+    this.handelupNewList();
   }
 }
 export default connect(

@@ -72,11 +72,9 @@ export default class Finance extends Component {
     setTimeout(() => {
       http.get(`list/?tag=news_finance&ac=wap&count=20&format=json_raw&as=A165DD719E0B3D0&cp=5D1EBBC32DE0EE1&max_behot_time=1562284708&_signature=ep7jwAAAJ4Jz0pnVydMOE3qe49&i=1562284708`
       ).then(res => {
-        // console.log(res.data)
-        // let arr = this.state.newsList;
         let newsList = [...this.state.newsList]
         res.data.data.map(item => {
-          newsList.push(item);
+          return newsList.push(item);
         })
         isLoding = false;
         this.setState({
