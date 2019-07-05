@@ -3,7 +3,7 @@ import { ContentWrap } from '../style'
 import http from '../../../utils/http';
 
 let isLoding = false;
-export default class Recration extends Component {
+export default class Military extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -61,7 +61,7 @@ export default class Recration extends Component {
     )
   }
   async ajax() {
-    const res = await http.get(`list/?tag=news_entertainment&ac=wap&count=20&format=json_raw&as=A1358DA17EDA788&cp=5D1EFA677828EE1&min_behot_time=0&_signature=QbwVlAAAHKRI8G-Bv2hjC0G8FY&i=`
+    const res = await http.get(`list/?tag=news_military&ac=wap&count=20&format=json_raw&as=A1C56D71FECB4B9&cp=5D1EDB842BA91E1&min_behot_time=0&_signature=ep7jwAAAJ4Jz0pnVydORB3qe49&i=`
     )
     this.setState({
       newsList: res.data.data
@@ -70,7 +70,7 @@ export default class Recration extends Component {
   getNewList() {
     isLoding = true;
     setTimeout(() => {
-      http.get(`list/?tag=news_entertainment&ac=wap&count=20&format=json_raw&as=A185AD611E1AD16&cp=5D1E5A3D11267E1&max_behot_time=1562288987&_signature=QbwVlAAAHKRI8G-Bv2iQBEG8FY&i=1562288987`
+      http.get(`list/?tag=news_military&ac=wap&count=20&format=json_raw&as=A1057D817E8B520&cp=5D1E5B6592D02E1&max_behot_time=1562289233&_signature=ep7jwAAAJ4Jz0pnVydNRpHqe49&i=1562289233`
       ).then(res => {
         // console.log(res.data)
         // let arr = this.state.newsList;

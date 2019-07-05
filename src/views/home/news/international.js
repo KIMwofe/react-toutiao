@@ -1,9 +1,10 @@
+
 import React, { Component } from 'react'
 import { ContentWrap } from '../style'
 import http from '../../../utils/http';
 
 let isLoding = false;
-export default class Recration extends Component {
+export default class international extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -61,7 +62,7 @@ export default class Recration extends Component {
     )
   }
   async ajax() {
-    const res = await http.get(`list/?tag=news_entertainment&ac=wap&count=20&format=json_raw&as=A1358DA17EDA788&cp=5D1EFA677828EE1&min_behot_time=0&_signature=QbwVlAAAHKRI8G-Bv2hjC0G8FY&i=`
+    const res = await http.get(`list/?tag=news_world&ac=wap&count=20&format=json_raw&as=A1B53D017EFBD1A&cp=5D1E0BFD81AA3E1&min_behot_time=0&_signature=by8nNwAAMjRmY10iuRQm7G8vJy&i=`
     )
     this.setState({
       newsList: res.data.data
@@ -70,7 +71,7 @@ export default class Recration extends Component {
   getNewList() {
     isLoding = true;
     setTimeout(() => {
-      http.get(`list/?tag=news_entertainment&ac=wap&count=20&format=json_raw&as=A185AD611E1AD16&cp=5D1E5A3D11267E1&max_behot_time=1562288987&_signature=QbwVlAAAHKRI8G-Bv2iQBEG8FY&i=1562288987`
+      http.get(`list/?tag=news_world&ac=wap&count=20&format=json_raw&as=A1D59D71AE0BD47&cp=5D1EDBED84875E1&max_behot_time=1562287178&_signature=by8nNwAAMjRmY10iuRSNE28vJy&i=1562287178`
       ).then(res => {
         // console.log(res.data)
         // let arr = this.state.newsList;

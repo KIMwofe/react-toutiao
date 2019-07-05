@@ -17,34 +17,10 @@ export const asyncSignIn = (values, props) => {
         window.localStorage.setItem('user', JSON.stringify(rec));
         let redirect = props.location.state
           ? props.location.state.redirect
-          : '/';
+          : '/home';
         props.history.replace(redirect);
       }
 
-      // window.localStorage.setItem('user', JSON.stringify(res.data));
-
-      // // 跳转页面
-      // let redirect = props.location.state
-      //   ? props.location.state.redirect
-      //   : '/';
-      // props.history.replace(redirect);
     })
-    // http
-    //   .post('/sign-in', JSON.stringify(values), {
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     }
-    //   })
-    //   .then(res => {
-    //     // 这里就不需要判断是否 code
-    //     dispatch(onSignIn(res.data));
-    //     window.localStorage.setItem('user', JSON.stringify(res.data));
-
-    //     // 跳转页面
-    //     let redirect = props.location.state
-    //       ? props.location.state.redirect
-    //       : '/';
-    //     props.history.replace(redirect);
-    //   });
   };
 };
