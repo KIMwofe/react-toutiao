@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import AuthRoute from './utils/Auth';
 import Login from './views/login/index';
 import Home from './views/home/index';
@@ -16,7 +16,6 @@ export default class App extends Component {
           <Route path="/search" component={Search} />
           <Route path="/searchfor" component={Searchfor} />
           <AuthRoute path="/" component={Home} />
-          <Redirect to="/home" />
         </Switch>
       </Router>
     )
