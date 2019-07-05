@@ -11,6 +11,7 @@ export const BoxWarp = styled.div`
   margin-left: auto;
    margin-right: auto;
   border-radius: 3px;
+  margin-top:10px;
 `
 export const IconWarp = styled(Icon)`
 font-size:24px;
