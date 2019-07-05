@@ -1,1 +1,0 @@
-export const SET_NAVLIST = 'home/set_navlist';
