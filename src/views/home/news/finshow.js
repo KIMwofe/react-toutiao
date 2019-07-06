@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ContentWrap } from '../style'
+import { ContentWrap, List } from '../style'
 import http from '../../../utils/http';
 
 let isLoding = false;
@@ -17,7 +17,7 @@ export default class finshow extends Component {
           {
             this.state.newsList.map((item, index) => {
               return (
-                <li key={index}>
+                <List key={index} href={`/#/content/?${item.tag_id}`}>
                   <div id="imgBox" className={item.image_url ? 'titleBox' : ''}>
                     <h3>{item.title}</h3>
                     {
@@ -52,7 +52,7 @@ export default class finshow extends Component {
                       <img src={item.image_url} alt="" />
                     </div> : ''
                   }
-                </li>
+                </List>
               )
             })
           }

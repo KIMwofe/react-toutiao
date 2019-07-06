@@ -1,35 +1,4 @@
 import styled from "styled-components";
-
-export const Homewrap = styled.div`
-  display: -webkit-flex;
-  flex-direction:column;
-  height: 100%;
-`;
-export const TitleWrap = styled.div`
-    width:88px;
-    height:100% ;
-    background:url('https://s3b.pstatp.com/growth/mobile_list/image/wap_logo@3x_581de69e.png') no-repeat  center;
-    background-size:42%;
-    flex:1;
-`;
-
-
-export const Header = styled.div`
-  width:100%;
-  height:48px;
-  color:#000;
-  background:#d43d3d;
-  position:relative;
-  display:flex;
-  justify-content:space-between;
-
-`;
-export const NavWrap = styled.div`
-  height:38px;
-  /* width:100%; */
-  background:#f4f5f6;
-
-`;
 export const ContentWrap = styled.div`
   flex:1;
   overflow-y: auto;
