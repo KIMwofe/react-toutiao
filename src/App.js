@@ -12,11 +12,9 @@ export default class App extends Component {
       <Router>
         <Switch>
           <Route path="/login" component={Login} />
-          <Route path="/home" component={Home} />
           <Route path="/search" component={Search} />
           <Route path="/searchfor" component={Searchfor} />
           <AuthRoute path="/" component={Home} />
-          <Redirect to="/home" />
         </Switch>
       </Router>
     )
