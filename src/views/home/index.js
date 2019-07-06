@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Header, Homewrap, ContentWrap, NavWrap, TitleWrap } from './style';
+import { Header, Homewrap, ContentWrap, NavWrap, TitleWrap, List } from './style';
 import { connect } from 'react-redux';
 import { NavLink, HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import AuthRoute from '../../utils/Auth';
@@ -73,7 +73,7 @@ class Index extends Component {
           {
             this.state.newsList.map((item, index) => {
               return (
-                <li key={index}>
+                <List key={index} href={`/#/content/?${item.tag_id}`}>
                   <div id="imgBox" className={item.image_url ? 'titleBox' : ''}>
                     <h3>{item.title}</h3>
                     {
@@ -108,7 +108,7 @@ class Index extends Component {
                       <img src={item.image_url} alt="" />
                     </div> : ''
                   }
-                </li>
+                </List>
               )
             })
           }
@@ -152,15 +152,8 @@ class Index extends Component {
       }
     }
   }
-  handelupNewList() {
-    http.get(`i6710055409031315971/info/?i=6710055409031315971`).then(res => {
-      console.log(res.data)
-    })
-  }
   componentDidMount() {
-    this.getNewList();
     this.ajax();
-    this.handelupNewList();
   }
 }
 export default connect(
