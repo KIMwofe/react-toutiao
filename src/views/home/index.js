@@ -50,7 +50,7 @@ class home extends Component {
             <Route path='/military' component={Military} />
             <Route path='/international' component={International} />
             <Route path='/finshow' component={Finshow} />
-            <AuthRoute path='/' component={Index} />
+            <AuthRoute path='/home' component={Index} />
             <Redirect to="/home" />
           </Switch>
         </Router>
