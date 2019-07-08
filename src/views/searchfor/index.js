@@ -2,15 +2,16 @@
 import React, { Component } from 'react';
 import { BoxWarp, IconWarp, InputWarp, ButtonWarp } from './style';
 import NewsList from './list';
-// import { InputWarp } from './style';
-import Inputlist from './inputlist';
+import Inputlist from './inputlist/index';
+
 export default class Searchfor extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      msg:''
+      msg: '',
+    display:'block'
     }
-}
+  }
   onBack = () => {
     this.props.history.replace('/search')
   }
@@ -18,11 +19,19 @@ export default class Searchfor extends Component {
     this.setState({
       msg: e.target.value
     })
-
+    this.setState({ display: !this.state.display })
+    if (this.state.msg !== null) {
+      this.setState({
+        display: 'none',
+      })
+    } else {
+      this.setState({
+        display:'block'
+      })
+    }
   }
-
   render() {
-    // console.log(this.props)
+
     return (
       <React.Fragment>
         <BoxWarp>
@@ -32,16 +41,18 @@ export default class Searchfor extends Component {
             placeholder="请输入搜索内容"
             value={this.state.msg}
             onChange={e => this.txtChanged(e)}
-        >
+          >
           </InputWarp>
           <ButtonWarp onClick={this.onBack}>取消</ButtonWarp>
         </BoxWarp >
-
-        <NewsList />
-        <Inputlist arr={this.state.msg}/>
+        <div style={{ display:this.state.display }} ><NewsList /></div>
+        <div>
+          <Inputlist arr={this.state.msg}>
+          </Inputlist>
+        </div>
       </React.Fragment>
     )
-  }
-}
+              }
+            }
 
 

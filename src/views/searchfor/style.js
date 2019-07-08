@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Input, Button, Icon } from 'antd';
 
 export const BoxWarp = styled.div`
-  background:red;
+
   height: 44px;
   display: flex;
   align-items: center;
